@@ -1,20 +1,17 @@
 import React from 'react';
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+    constructor(props) {
+        super(props);
+    }
 
-  render() {
-    return (
-      <h1
-        onClick={() => this.props.handleState('state words')}
-      >
-        My First React Component {this.props.words}
-      </h1>
-    );
-  }
-
+    render() {
+        return (
+            <section id="header">
+                <h1>RESTy API</h1>
+            </section>
+        );
+    }
 }
 
 export default Header;
