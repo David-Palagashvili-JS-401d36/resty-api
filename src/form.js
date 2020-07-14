@@ -16,7 +16,24 @@ class Form extends React.Component {
     }
 
     handleSubmit(event) {
-        console.log('value submitted to form', this.state.value);
+        console.log('URL submitted to form', this.state.value);
         event.preventDefault();
     }
+
+    render() {
+        return (
+            <section id="form">
+                <form onSubmit={this.handleSubmit}>
+                    <label>URL:</label>
+                    <input type="text" id="url" placeholder="URL" name="url" onChange={this.handleChange}></input>
+                    <input className = "submit" value= "GO!"></input>
+                </form>
+                <section>
+                    <p className="update">{this.state.method} {this.state.value}</p>
+                </section>
+            </section>
+        );
+    }
 }
+
+export default Form;
