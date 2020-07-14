@@ -3,10 +3,10 @@ import React from 'react';
 class Form extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.state = { // state only for the form
             method: '',
             value: '',
-        };
+        }; // handlers invoked with the state, must be bound to the component
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -27,7 +27,7 @@ class Form extends React.Component {
                     <label>URL:</label>
                     <input type="text" id="url" placeholder="URL" name="url" onChange={this.handleChange}></input>
                     <input className = "submit" value= "GO!"></input>
-                    <input className="button" type="button" value="GET" onClick={() => this.setState({method: 'GET'})}></input>
+                    <input className="button" type="button" value="GET" onClick={() => this.setState( {method: 'GET'} )}></input>
                 </form>
                 <section>
                     <p className="update">{this.state.method} {this.state.value}</p>
