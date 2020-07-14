@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './header.js';
 import Form from './form.js';
 import Footer from './footer.js';
-
+// all sass designs are loaded to and ran from the App compenent
 import './app.scss';
 import './styles/header.scss';
 import './styles/form.scss';
