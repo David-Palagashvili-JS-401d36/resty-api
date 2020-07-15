@@ -28,6 +28,9 @@ class Form extends React.Component {
                     <input type="text" id="url" placeholder="URL" name="url" onChange={this.handleChange}></input>
                     <input className = "submit" value= "GO!"></input>
                     <input className="button" type="button" value="GET" onClick={() => this.setState( {method: 'GET'} )}></input>
+                    <input className="button" type="button" value="POST" onClick={() => this.setState( {method: 'POST'} )}></input>
+                    <input className="button" type="button" value="PUT" onClick={() => this.setState( {method: 'PUT'} )}></input>
+                    <input className="button" type="button" value="DELETE" onClick={() => this.setState( {method: 'DELETE'} )}></input>
                 </form>
                 <section>
                     <p className="update">{this.state.method} {this.state.value}</p>
