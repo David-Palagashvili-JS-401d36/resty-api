@@ -1,48 +1,39 @@
 import React from 'react';
 import Header from './header.js';
+import Form from './form.js';
+import Footer from './footer.js';
+// all sass designs are loaded to and ran from the App compenent
+import './styles/app.scss';
+import './styles/header.scss';
+import './styles/form.scss';
+import './styles/footer.scss';
 
-import './app.scss';
-
-// create our component, what makes something a React Component
-// it must return JSX
+// this component behaves similarly to our hub in CAPS, it sort of manages/hosts the rest of our components
 class App extends React.Component {
     constructor() {
         super();
         // Each component has it's own state
-        this.state = {
-            words: 'Default State',
-        };
-
+        this.state = {};
         // we must bind methods (not defined with fat arrow functions to the React.Components "this")
-        this.handleStateWords = this.handleStateWords.bind(this);
+        // this.handleStateWords = this.handleStateWords.bind(this);
     }
-
-    handleStateWords(words) {
-        this.setState({ words });
-    }
-
+    // handleStateWords(words) {
+    //     this.setState( {words} );
+    // }
     render() {
-
-        console.log(this.state);
-
-        // new React.component({words: 'aiuerhau', handleState: function})
+        // react components appear here, must be returned as JSX
         return (
             <div>
-                <Header
-                    words={this.state.words}
-                    handleState={this.handleStateWords}
-                />
-                {/* We  */}
-                <p>{this.state.words}</p>
+                <Header/>
+                <Form/>
+                <Footer/>
             </div>
         );
     }
 }
-
 // module.exports = App
 // vs.
 // module.exports = {
 //   App
 // }
-
 export default App;

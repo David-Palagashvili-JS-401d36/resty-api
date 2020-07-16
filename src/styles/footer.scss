@@ -1,0 +1,11 @@
+$standard-text: rgb(192, 192, 255);
+
+#footer {
+    background-color: rgb(187, 176, 176);
+    height: 100px;
+
+    p {
+        padding: 15px;
+        color:$standard-text;
+    }
+}
