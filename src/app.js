@@ -12,28 +12,26 @@ import './styles/footer.scss';
 class App extends React.Component {
     constructor() {
         super();
-        // Each component has it's own state
-        this.state = {};
-        // we must bind methods (not defined with fat arrow functions to the React.Components "this")
-        // this.handleStateWords = this.handleStateWords.bind(this);
+        this.state = { // Holds state: Count and Results Array
+            count: 0,
+            result: []
+        }
     }
-    // handleStateWords(words) {
-    //     this.setState( {words} );
-    // }
+    // A class method that can update state (getting a linter error ln 21 at the = operator...)
+    handleFormActions = (count, result) => {
+        this.setState( {count, result} )
+    }
+
     render() {
-        // react components appear here, must be returned as JSX
+        // TODO: Renders 2 Child Components
         return (
             <div>
                 <Header/>
-                <Form/>
+                <Form handler = {this.handleFormActions}/>
                 <Footer/>
             </div>
-        );
+        )
     }
 }
-// module.exports = App
-// vs.
-// module.exports = {
-//   App
-// }
+
 export default App;
