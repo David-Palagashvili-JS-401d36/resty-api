@@ -4,15 +4,17 @@ class Form extends React.Component {
     constructor(props) {
         super(props);
         this.state = { // state only for the form
-            method: '',
-            value: '',
-        }; // handlers invoked with the state, must be bound to the component
+            method: 'GET', // get is set as the default REST method
+            display: '',
+            url: '',
+        }; // handlers invoked with the state, must be bound to the component (not defined with fat arrow functions)
         this.handleChange = this.handleChange.bind(this);
+        // this.handleOptions = this.handleOptions.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     // separating the onChange handler allows us to be more dynamic with JSX
     handleChange(event) {
-        this.setState( {value: event.target.value} );
+        this.setState( {url: event.target.value} );
     }
     // having the submit handler as a dedicated method reduces possible interference from preventDefault.
     handleSubmit(event) {
